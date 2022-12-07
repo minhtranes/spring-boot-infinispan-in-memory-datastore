@@ -1,2 +1,2 @@
 server.port: ${PORT:8080}
-infinispan.embedded.config-xml: ${IFS_CONFIG_XML_FILE:infinispan.xml}
+infinispan.embedded.config-xml: infinispan-${NODE_ID}.xml

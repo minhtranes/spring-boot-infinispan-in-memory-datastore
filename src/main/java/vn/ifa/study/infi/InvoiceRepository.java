@@ -15,13 +15,22 @@ public class InvoiceRepository {
 
     @Autowired
     private EmbeddedCacheManager cacheManager;
-    private Cache<Object, Object> cache;
+    private Cache<String, Invoice> cache;
+
+    public Invoice find(final String id) {
+
+        return cache.get(id);
+    }
 
     @PostConstruct
     void initialize() {
 
         cache = cacheManager.getCache("invoices");
         log.info("Initialize cache {} successfully", "invoices");
-        cache.put("samplekey", "samplevalue");
+    }
+
+    public Invoice save(final Invoice invoice) {
+
+        return cache.put(invoice.getId(), invoice);
     }
 }

@@ -18,14 +18,13 @@
 
 		<replicated-cache name="invoices" mode="SYNC"
 			statistics="true">
-
+		
 			<encoding media-type="application/x-protostream" />
 			<expiration lifespan="300000" />
 			<memory when-full="REMOVE" max-count="20" />
 			<persistence>
 				<rocksdb-store
-					xmlns="urn:infinispan:config:store:rocksdb:14.0"
-					path="data">
+					xmlns="urn:infinispan:config:store:rocksdb:14.0" path="data">
 					<expiration path="expired" />
 				</rocksdb-store>
 			</persistence>
