@@ -1,4 +1,4 @@
-package vn.ifa.study.infi;
+package vn.ifa.study.infi.model;
 
 import org.infinispan.protostream.annotations.ProtoField;
 

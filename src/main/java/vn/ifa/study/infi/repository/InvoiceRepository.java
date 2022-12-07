@@ -1,4 +1,4 @@
-package vn.ifa.study.infi;
+package vn.ifa.study.infi.repository;
 
 import javax.annotation.PostConstruct;
 
@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import lombok.extern.slf4j.Slf4j;
+import vn.ifa.study.infi.model.Invoice;
 
 @Slf4j
 @Repository
