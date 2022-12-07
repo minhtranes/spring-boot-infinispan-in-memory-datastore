@@ -13,6 +13,7 @@ mvn clean package
 
 ### Run multiple app instances to test the resiliency and high availability
 To start the application instance, you must define the environment variable
-- PORT: set the instance listing port
-- NODE_ID: set the infinispan node id, its value must be one of ```node1``` or ```node2```
+- *PORT*: set the instance listing port
+- *NODE_ID*: set the infinispan node id, its value must be one of ```node1``` or ```node2```
 
+Start the app instances and verify by accessing to one of the two instance for api at ```/docs-ui```
