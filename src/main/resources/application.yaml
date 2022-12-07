@@ -1,1 +1,2 @@
-infinispan.embedded.config-xml: infinispan.xml
+server.port: ${PORT:8080}
+infinispan.embedded.config-xml: ${IFS_CONFIG_XML_FILE:infinispan.xml}

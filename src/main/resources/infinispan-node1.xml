@@ -11,7 +11,7 @@
 			initial-cluster-timeout="30000" />
 
 		<global-state>
-			<persistent-location path="global/state" />
+			<persistent-location path="data/node1" />
 		</global-state>
 
 		<jmx enabled="true" domain="vn.ifa.study" />
@@ -25,8 +25,8 @@
 			<persistence>
 				<rocksdb-store
 					xmlns="urn:infinispan:config:store:rocksdb:14.0"
-					path="rocksdb/data">
-					<expiration path="rocksdb/expired" />
+					path="data">
+					<expiration path="expired" />
 				</rocksdb-store>
 			</persistence>
 		</replicated-cache>
