@@ -1,18 +1,20 @@
 package vn.ifa.study.infi.model;
 
-import org.infinispan.protostream.annotations.ProtoField;
+import java.time.LocalDate;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
 @Setter
 @Getter
+@Builder
 public class Invoice {
 
-    @ProtoField(1)
-    String id;
+    private String id;
 
-    @ProtoField(2)
-    String customerName;
+    private String customerName;
+
+    private LocalDate issuedDate;
 
 }
