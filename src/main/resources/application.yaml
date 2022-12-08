@@ -1,5 +1,4 @@
 server.port: ${PORT:8080}
-infinispan.embedded.config-xml: infinispan-${NODE_ID}.xml
 springdoc:
     api-docs.path: /docs
     swagger-ui.path: /docs-ui
