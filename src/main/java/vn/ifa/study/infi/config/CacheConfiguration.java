@@ -55,7 +55,6 @@ public class CacheConfiguration {
                 .location("data/" + nodeId)
                 .expiredLocation("expired")
                 .statistics()
-                .enabled(true)
                 .build();
     }
 }
