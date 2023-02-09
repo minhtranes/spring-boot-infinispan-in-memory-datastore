@@ -11,14 +11,14 @@
 			initial-cluster-timeout="30000" />
 
 		<global-state>
-			<persistent-location path="data/node1" />
+			<persistent-location path="data/${NODE_ID}" />
 		</global-state>
 
-		<jmx enabled="true" domain="vn.ifa.study" />
-
+		<jmx enabled="true" />
+		<metrics gauges="true" histograms="true" accurate-size="true"/>
 		<replicated-cache name="invoices" mode="SYNC"
-			statistics="true">
-		
+			statistics="true" statistics-available="true">
+
 			<encoding media-type="application/x-protostream" />
 			<expiration lifespan="300000" />
 			<memory when-full="REMOVE" max-count="20" />
@@ -28,6 +28,12 @@
 					<expiration path="expired" />
 				</rocksdb-store>
 			</persistence>
+			<indexing enabled="true" storage="filesystem" path="indexed"
+				startup-mode="none">
+				<indexed-entities>
+					<indexed-entity>vn.ifa.study.infi.model.Invoice</indexed-entity>
+				</indexed-entities>
+			</indexing>
 		</replicated-cache>
 	</cache-container>
 </infinispan>

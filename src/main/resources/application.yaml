@@ -1,5 +1,18 @@
 server.port: ${PORT:8080}
-infinispan.embedded.config-xml: infinispan-${NODE_ID}.xml
+infinispan.embedded.config-xml: infinispan.xml
 springdoc:
     api-docs.path: /docs
     swagger-ui.path: /docs-ui
+spring.jmx.enabled: true
+management:
+    endpoints:
+        jmx.exposure.include: '*'
+        web:
+            exposure.include: '*'
+            base-path: /management
+    endpoint.health.show-details: ALWAYS
+    metrics.export:
+        jmx.enabled: true
+        atlas:
+            enabled: true
+            uri: http://localhost:7101/api/v1/publish
